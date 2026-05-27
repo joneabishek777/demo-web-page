@@ -1,44 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colorful Home Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff6ec4, #7873f5, #42e695);
+      min-height: 100vh;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: yellow;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      height: 85vh;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 70px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 22px;
+      max-width: 700px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      background: white;
+      color: #ff4f9a;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: yellow;
+      color: black;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      width: 280px;
+      border-radius: 20px;
+      text-align: center;
+      transition: 0.4s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      color: yellow;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.2);
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple HTML page.</p>
-    </header>
+  <nav>
+    <div class="logo">JONE</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-    <hr>
+  <section class="hero">
+    <h1>Welcome to My Colorful Website</h1>
+    <p>
+      Create amazing websites with beautiful colors, smooth animations,
+      and modern designs. This homepage is fully responsive and stylish.
+    </p>
+    <button class="btn">Get Started</button>
+  </section>
 
-    <section>
-        <h2>About Me</h2>
-        <p>Hello! My name is Jone Abishek. I am learning web development.</p>
-    </section>
+  <section class="cards">
+    <div class="card">
+      <h2>Creative Design</h2>
+      <p>Modern and vibrant UI design for your awesome projects.</p>
+    </div>
 
-    <section>
-        <h2>My Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Java</li>
-            <li>DSA</li>
-        </ul>
-    </section>
+    <div class="card">
+      <h2>Fast Performance</h2>
+      <p>Optimized layout with smooth and responsive experience.</p>
+    </div>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: example@gmail.com</p>
-    </section>
+    <div class="card">
+      <h2>Easy to Customize</h2>
+      <p>Edit text, colors, and sections easily according to your needs.</p>
+    </div>
+  </section>
 
-    <hr>
-
-    <footer>
-        <p>© 2026 My Simple Website</p>
-    </footer>
+  <footer>
+    <p>© 2026 JONE ABISHEK | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
+
