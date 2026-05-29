@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Boys Universe</title>
+  <title>Avengers Universe</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -14,18 +15,19 @@
     }
 
     body{
-      background:black;
+      background:#050816;
       color:white;
       overflow-x:hidden;
     }
 
-    /* HERO SECTION */
+    /* HERO */
 
     .hero{
       height:100vh;
+
       background:
-      linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-      url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop');
+      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1600&auto=format&fit=crop');
 
       background-size:cover;
       background-position:center;
@@ -38,71 +40,75 @@
     }
 
     .hero-content h1{
-      font-size:90px;
-      color:#ff2c2c;
-      letter-spacing:8px;
+      font-size:100px;
+      color:#00bfff;
+      letter-spacing:10px;
       margin-bottom:20px;
+      text-shadow:0 0 20px #00bfff;
     }
 
     .hero-content p{
       font-size:24px;
       color:#ddd;
-      margin-bottom:30px;
+      margin-bottom:35px;
+      line-height:1.5;
     }
 
     .hero-content button{
-      padding:15px 35px;
+      padding:16px 40px;
       border:none;
-      background:#ff2c2c;
+      border-radius:15px;
+      background:#00bfff;
       color:white;
       font-size:18px;
-      border-radius:12px;
       cursor:pointer;
       transition:0.3s;
+      font-weight:bold;
     }
 
     .hero-content button:hover{
-      background:#d60000;
-      transform:scale(1.05);
+      transform:scale(1.08);
+      background:#0099cc;
     }
 
-    /* CHARACTER SECTION */
+    /* CHARACTERS */
 
     .characters{
-      padding:80px 40px;
-      background:#111;
+      padding:90px 40px;
+      background:#0d111f;
     }
 
     .characters h2{
       text-align:center;
-      font-size:55px;
-      margin-bottom:60px;
-      color:gold;
+      font-size:60px;
+      margin-bottom:70px;
+      color:#ffd700;
     }
 
     .card-container{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:35px;
     }
 
     .card{
       position:relative;
+      border-radius:22px;
       overflow:hidden;
-      border-radius:20px;
       cursor:pointer;
       transition:0.4s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.5);
     }
 
     .card:hover{
-      transform:translateY(-10px);
+      transform:translateY(-12px);
     }
 
     .card img{
       width:100%;
       height:450px;
       object-fit:cover;
-      transition:0.4s;
+      transition:0.5s;
     }
 
     .card:hover img{
@@ -112,7 +118,7 @@
     .overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      background:linear-gradient(to top, rgba(0,0,0,0.95), transparent);
     }
 
     .card-content{
@@ -123,36 +129,37 @@
     }
 
     .card-content h3{
-      font-size:32px;
-      margin-bottom:10px;
+      font-size:34px;
+      margin-bottom:8px;
     }
 
     .card-content p{
-      color:#ddd;
       font-size:18px;
+      color:#ddd;
     }
 
-    /* QUOTE SECTION */
+    /* QUOTE */
 
     .quote{
-      padding:100px 20px;
+      padding:110px 20px;
       text-align:center;
-      background:linear-gradient(to right,#5b0000,black,#5b0000);
+      background:linear-gradient(to right,#001f3f,#000814,#001f3f);
     }
 
     .quote h1{
-      font-size:55px;
+      font-size:58px;
       line-height:1.5;
+      color:white;
     }
 
     /* FOOTER */
 
     footer{
       text-align:center;
-      padding:30px;
+      padding:35px;
       background:black;
-      border-top:1px solid #222;
       color:#888;
+      border-top:1px solid #222;
     }
 
     /* MOBILE */
@@ -160,7 +167,7 @@
     @media(max-width:768px){
 
       .hero-content h1{
-        font-size:55px;
+        font-size:60px;
       }
 
       .hero-content p{
@@ -168,30 +175,35 @@
       }
 
       .quote h1{
-        font-size:32px;
+        font-size:34px;
+      }
+
+      .characters h2{
+        font-size:42px;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
 
   <section class="hero">
 
     <div class="hero-content">
 
-      <h1>THE BOYS</h1>
+      <h1>AVENGERS</h1>
 
       <p>
-        Enter the dark world of superheroes,
-        corruption, power and chaos.
+        Earth's Mightiest Heroes unite to protect
+        the universe from destruction.
       </p>
 
-      <button>Explore Characters</button>
+      <button>Assemble Now</button>
 
     </div>
 
@@ -201,26 +213,11 @@
 
   <section class="characters">
 
-    <h2>Main Characters</h2>
+    <h2>Legendary Heroes</h2>
 
     <div class="card-container">
 
-      <!-- HOMELANDER -->
-
-      <div class="card">
-
-        <img src="https://wallpapercave.com/w/wp11287346">
-
-        <div class="overlay"></div>
-
-        <div class="card-content">
-          <h3>Homelander</h3>
-          <p>Leader of The Seven</p>
-        </div>
-
-      </div>
-
-      <!-- BUTCHER -->
+      <!-- IRON MAN -->
 
       <div class="card">
 
@@ -229,28 +226,13 @@
         <div class="overlay"></div>
 
         <div class="card-content">
-          <h3>Billy Butcher</h3>
-          <p>The Boys Team Leader</p>
+          <h3>Iron Man</h3>
+          <p>Genius Billionaire Inventor</p>
         </div>
 
       </div>
 
-      <!-- STARLIGHT -->
-
-      <div class="card">
-
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="overlay"></div>
-
-        <div class="card-content">
-          <h3>Starlight</h3>
-          <p>Light Powered Hero</p>
-        </div>
-
-      </div>
-
-      <!-- SOLDIER BOY -->
+      <!-- THOR -->
 
       <div class="card">
 
@@ -259,8 +241,38 @@
         <div class="overlay"></div>
 
         <div class="card-content">
-          <h3>Soldier Boy</h3>
-          <p>Legendary Supe</p>
+          <h3>Thor</h3>
+          <p>God of Thunder</p>
+        </div>
+
+      </div>
+
+      <!-- BLACK WIDOW -->
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay"></div>
+
+        <div class="card-content">
+          <h3>Black Widow</h3>
+          <p>Master Spy & Assassin</p>
+        </div>
+
+      </div>
+
+      <!-- CAPTAIN AMERICA -->
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay"></div>
+
+        <div class="card-content">
+          <h3>Captain America</h3>
+          <p>The First Avenger</p>
         </div>
 
       </div>
@@ -274,8 +286,7 @@
   <section class="quote">
 
     <h1>
-      “With great power... <br>
-      comes absolute corruption.”
+      “Whatever it takes.”
     </h1>
 
   </section>
@@ -284,7 +295,9 @@
 
   <footer>
 
-    <p>Fan-made website inspired by The Boys universe.</p>
+    <p>
+      Fan-made Avengers website inspired by Marvel heroes.
+    </p>
 
   </footer>
 
