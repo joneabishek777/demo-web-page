@@ -1,185 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Colorful Home Page</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+export default function TheBoysWebsite() {
+  const characters = [
+    {
+      name: "Homelander",
+      role: "Leader of The Seven",
+      color: "from-red-700 to-yellow-500",
+      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      name: "Billy Butcher",
+      role: "The Boys Team Leader",
+      color: "from-gray-900 to-red-600",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      name: "Starlight",
+      role: "Light-Powered Hero",
+      color: "from-yellow-300 to-orange-500",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      name: "Soldier Boy",
+      role: "Legendary Supe",
+      color: "from-green-700 to-yellow-400",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop"
     }
+  ];
 
-    body {
-      background: linear-gradient(135deg, #ff6ec4, #7873f5, #42e695);
-      min-height: 100vh;
-      color: white;
-    }
+  return (
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative h-screen flex flex-col justify-center items-center text-center px-6">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-30"></div>
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-    }
+        <div className="relative z-10 max-w-4xl">
+          <h1 className="text-7xl md:text-9xl font-extrabold tracking-widest text-red-600 drop-shadow-lg">
+            THE BOYS
+          </h1>
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+          <p className="mt-6 text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Enter the dark world of superheroes, corruption, power, and chaos.
+          </p>
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
+          <button className="mt-10 px-8 py-4 rounded-2xl bg-red-600 hover:bg-red-700 transition-all duration-300 text-lg font-bold shadow-2xl hover:scale-105">
+            Explore Characters
+          </button>
+        </div>
+      </section>
 
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
-      transition: 0.3s;
-    }
+      {/* Characters Section */}
+      <section className="py-20 px-6 md:px-16 bg-zinc-950">
+        <h2 className="text-5xl font-bold text-center mb-16 text-yellow-400">
+          Main Characters
+        </h2>
 
-    nav ul li a:hover {
-      color: yellow;
-    }
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {characters.map((char, index) => (
+            <div
+              key={index}
+              className="group relative rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500"
+            >
+              <img
+                src={char.image}
+                alt={char.name}
+                className="h-[450px] w-full object-cover group-hover:scale-110 transition duration-500"
+              />
 
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      height: 85vh;
-      padding: 20px;
-    }
+              <div className={`absolute inset-0 bg-gradient-to-t ${char.color} opacity-70`}></div>
 
-    .hero h1 {
-      font-size: 70px;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    }
+              <div className="absolute bottom-0 p-6 z-10">
+                <h3 className="text-3xl font-extrabold">{char.name}</h3>
+                <p className="mt-2 text-gray-100 text-lg">{char.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    .hero p {
-      font-size: 22px;
-      max-width: 700px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
+      {/* Quote Section */}
+      <section className="py-24 px-6 bg-gradient-to-r from-red-900 via-black to-red-900 text-center">
+        <h2 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-5xl mx-auto">
+          “With great power... comes absolute corruption.”
+        </h2>
+      </section>
 
-    .btn {
-      padding: 15px 35px;
-      border: none;
-      border-radius: 30px;
-      background: white;
-      color: #ff4f9a;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.1);
-      background: yellow;
-      color: black;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 50px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(8px);
-      padding: 30px;
-      width: 280px;
-      border-radius: 20px;
-      text-align: center;
-      transition: 0.4s;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      background: rgba(255,255,255,0.25);
-    }
-
-    .card h2 {
-      margin-bottom: 15px;
-      color: yellow;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.2);
-      margin-top: 30px;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <div class="logo">JONE</div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-
-  <section class="hero">
-    <h1>Welcome to My Colorful Website</h1>
-    <p>
-      hire me bruhh 
-    </p>
-    <button class="btn">Get Started</button>
-  </section>
-
-  <section class="cards">
-    <div class="card">
-      <h2>Creative Design</h2>
-      <p>Modern and vibrant UI design for your awesome projects.</p>
+      {/* Footer */}
+      <footer className="bg-black py-10 text-center border-t border-zinc-800">
+        <p className="text-gray-400 text-lg">
+          Fan-made website inspired by The Boys universe.
+        </p>
+      </footer>
     </div>
+  );
+}
 
-    <div class="card">
-      <h2>Fast Performance</h2>
-      <p>Optimized layout with smooth and responsive experience.</p>
-    </div>
-
-    <div class="card">
-      <h2>Easy to Customize</h2>
-      <p>Edit text, colors, and sections easily according to your needs.</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 JONE ABISHEK | All Rights Reserved</p>
-  </footer>
-
-</body>
-</html>
 
